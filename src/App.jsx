@@ -38,7 +38,7 @@ function App() {
     const seconds = Math.floor((time / 1000) % 60);
     const minutes = Math.floor((time / (1000 * 60)) % 60);
 
-    return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    return `${minutes}:${String(seconds).padStart(2, "0")}`;
   };
 
   // Ensure the interval is cleared when the component unmounts
@@ -52,10 +52,10 @@ function App() {
 
   return (
     <>
-      <h1>Stop Watch</h1>
+      <h1>Stopwatch</h1>
       <div className="stopwatch">
         <p>
-          Time: {' '}<span className="time">{formatTime(time)}</span>
+          Time: <span className="time">{formatTime(time)}</span>
         </p>
         <div className="controls">
           {isRunning ? (
